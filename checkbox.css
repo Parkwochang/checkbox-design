@@ -51,3 +51,140 @@
   height: 16px;
   transition: all 0.3s ease 0.2s;
 }
+
+.main {
+  width: 100%;
+  height: 800px;
+  background-color: #f8f8fa;
+  font-family: 'Roboto';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main section {
+  width: 578px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.main h1 {
+  display: none;
+}
+.main h2 {
+  font-size: 24px;
+  font-weight: 900;
+  display: inline-block;
+  margin: 0;
+  line-height: 26px;
+  color: #364785;
+}
+.main span {
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.leftArea {
+  height: 100%;
+  width: 200px;
+  background-image: url(/img/ico_error.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rightArea {
+  height: 100%;
+  padding-top: 14px;
+}
+
+.logo {
+  /* height: 40px; */
+  display: flex;
+  flex-direction: row;
+}
+
+.logo .left {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-image: url(./img/ico_eap_logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.logo .right {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.logo .right span {
+  line-height: 12.26px;
+}
+.rightArea .text {
+  margin-top: 26px;
+}
+
+p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.06px;
+  margin: 0;
+}
+/* p:last-child {
+  margin-top: 8px;
+} */
+
+.two {
+  position: relative;
+}
+.two section {
+  flex-direction: column;
+  width: 550px;
+  justify-content: center;
+}
+.two .logo {
+  margin: 0 0 11px 0;
+}
+
+.progressBar {
+  width: 550px;
+  height: 20px;
+  background-color: #eceef4;
+}
+.progressBar .gauge {
+  height: 100%;
+  width: 0%;
+  background-color: #5c79f1;
+  transition: all 2s;
+}
+
+.p {
+  margin-top: 5px;
+  text-align: right;
+  display: inline-block;
+  position: relative;
+}
+
+.p::after {
+  content: '';
+  position: absolute;
+  top: 4%;
+  right: -1px;
+  height: 100%;
+  width: 1px;
+  background-color: #4c566e;
+}
+.p.active::after {
+  display: none;
+}
+
+.main .btn {
+  position: absolute;
+  top: 80%;
+}
+
+.btn button {
+  width: 50px;
+  height: 30px;
+  background-color: #5c79f1;
+  border-radius: 5px;
+  border: none;
+}
