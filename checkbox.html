@@ -34,7 +34,8 @@
             <p>
               <br />
               knoxTray 토큰이 유효하지 않습니다. <br />
-              Knox Portal 로그인을 한 상태에서 EAP에 접속해 주시기 바랍니다. <br />
+              Knox Portal 로그인을 한 상태에서 EAP에 접속해 주시기 바랍니다.
+              <br />
               도움이 필요하시면 연락 하십시오. T4465
             </p>
           </div>
@@ -47,7 +48,15 @@
     <!-- checkbox -->
 
     <label for="id" class="check_box">
-      <input type="checkbox" id="id" name="name" checked="{value" || false} onChange="{onChange}" />
+      <input
+        type="checkbox"
+        id="id"
+        name="name"
+        checked="{value"
+        ||
+        false}
+        onChange="{onChange}"
+      />
       <span class="icon"></span>
     </label>
 
@@ -73,45 +82,55 @@
       </div>
     </div>
     <script>
-      const bar = document.querySelector('.gauge');
-      const click = document.querySelector('.first');
-      const auto = document.querySelector('.second');
-      const p = document.querySelector('.p');
+      const bar = document.querySelector(".gauge");
+      const click = document.querySelector(".first");
+      const auto = document.querySelector(".second");
+      const p = document.querySelector(".p");
 
       let plus = 0;
-      const text = 'Starting...'.split('');
+      let text = "Starting...".split("");
+      console.log(text, "text");
+      let textWrap = [];
 
       const dynamic = (_text) => {
-        let text = _text;
         if (text.length > 0) {
-          p.textContent += text.shift();
+          _text = text.shift();
+          textWrap.push(_text);
+          console.log("wrap", textWrap);
+          p.textContent += _text;
           setTimeout(function () {
             dynamic(text);
-          }, 100);
+          }, 200);
           if (text.length === 0) {
-            dynamic(_text);
+            p.textContent = "";
           }
+        } else if (text.length === 0) {
+          text = textWrap;
+          textWrap = [];
+          setTimeout(function () {
+            dynamic(text);
+          }, 300);
         }
       };
 
       dynamic(text);
 
       const clickBar = (e) => {
-        console.log(bar.style, 'bar');
+        console.log(bar.style, "bar");
         if (plus < 100) {
           plus += 10;
           bar.style.width = `${plus}%`;
         }
       };
       const autoBar = (e) => {
-        console.log('auto');
+        console.log("auto");
         for (let i = 0; i <= 100; i++) {
           i + 10;
           bar.style.width = `${i}%`;
         }
       };
       const blank = () => {
-        p.classList.toggle('active');
+        p.classList.toggle("active");
       };
       setInterval(blank, 500);
     </script>
